@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer Tasks Results</title>
+    <link rel="stylesheet" href="./bootstrap-5.0.2-dist/bootstrap.min.css">
+    <link href="./bootstrap-5.0.2-dist/print.css" media="print" rel="stylesheet" />
+    <link href="./bootstrap-5.0.2-dist/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="my-3 mx-auto w-75">
+        <h3 class="display-5 fs-3 my-3">اضافة اسم المصمم</h3>
+        <input
+            type="text"
+            class="form-control"
+            name="designer name"
+            id="designerName"
+            aria-describedby="helpId"
+            placeholder="اسم المصمم"
+        />
+        <h2 class="text-danger display-5 text-center my-3" id="designerNameText"></h2>
+    </div>
+    <h1 class="text-primary display-6 text-center my-5" id="h1">حساب  مهام المصممين </h1>
+    <div class="container mt-5">
+        <div class="d-flex align-items-center justify-content-around">
+                <input
+                    type="text"
+                    class="form-control border-primary m-1"
+                    name="actives"
+                    id="actives"
+                    aria-describedby="helpId"
+                    placeholder="النشاط"
+                />
+
+                <input
+                    type="text"
+                    class="form-control border-primary m-1"
+                    name="designs"
+                    id="designs"
+                    aria-describedby="helpId"
+                    placeholder="عدد التصميمات"
+                />
+
+                <input
+                    type="text"
+                    class="form-control border-primary m-1"
+                    name="price"
+                    id="price"
+                    aria-describedby="helpId"
+                    placeholder="السعر"
+                />
+            </div>
+            <button class="btn btn-primary mx-auto my-3 d-block w-25 py-2" id="adding-task">اضافة المهمة</button>
+        <h3 class="text-center text-success display-5 fs-2 my-5" id="result-text"> التصميمات المضافة</h3>
+        <div class="table-responsive">
+            <table
+                class="table"
+            >
+                <thead>
+                    <tr>
+                        <th class="text-center" scope="col">النشاط</th>
+                        <th class="text-center" scope="col">عددالتصمميمات</th>
+                        <th class="text-center" scope="col">السعر</th>
+                        <th class="text-center" scope="col">الاجمالى</th>
+                    </tr>
+                </thead>
+                <tbody id="results">
+                    
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="text-center text-primary display-6 fs-3" colspan="3">الاجمالى :</td>
+                        <td class="text-center fw-bold text-primary display-6 fs-5" id="allTotal" colspan="1">0</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <button  class="btn btn-primary mx-auto my-3 d-block w-25 py-2" id="print" >طباعه البيانات</button>
+    </div>
+    <script src="./js/scripts.js"></script>
+</body>
+</html>

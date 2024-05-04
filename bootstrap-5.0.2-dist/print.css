@@ -1,0 +1,6 @@
+@media print {
+    /* All your print styles go here */
+#h1,input, #adding-task, #result-text,#print {
+      display: none !important;
+    }
+  }
