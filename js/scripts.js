@@ -25,6 +25,7 @@ addingTask.addEventListener("click",()=>{
         alert("ادخل البيانات بطريقة صحيحة")
     }
     window.setTimeout(()=>{
+        totalCoast = 0;
         coasts = document.querySelectorAll('.total-coast')
         coasts.forEach(coast=>{
             totalCoast += Number(coast.innerText)
