@@ -64,12 +64,17 @@ function CalculatingCoast(){
 function EditingData() {
     document.querySelectorAll('.designer-tasks').forEach(task=>{
         task.addEventListener("blur",function(){
+            console.log(this.value)
+            this.setAttribute('value',this.value)
             let dataCell = this.parentNode;
             dataCell.parentNode.querySelector('.total-coast'); 
             dataCell.parentNode.querySelector('.total-coast').innerText = (dataCell.parentNode.querySelector('.task-value input').value) * (dataCell.parentNode.querySelector('.task-price input').value);
             window.setTimeout(()=>{
                 CalculatingCoast();   
-            },0)
+            },0);
+            let res = document.getElementById('results');
+            results =  table.innerHTML; 
+            console.log(res);
         })
     })
 }
