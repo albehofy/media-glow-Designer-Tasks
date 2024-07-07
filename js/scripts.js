@@ -25,7 +25,14 @@ designerName.addEventListener("blur",()=>{
 });
 
 document.querySelector('#print').addEventListener('click',()=>{
-    window.print()
+    let list = document.querySelectorAll('.activety'); 
+    for(let item of list ){
+        let parent = item.parentElement; 
+        let value = item.value;
+        parent.innerHTML = `<p>${value}</p>`
+        console.log(parent)
+    }
+    window.print(); 
 });
 
 function AddingTasks(){
@@ -33,7 +40,7 @@ function AddingTasks(){
 
         results +=`
         <tr class="task-active">
-        <td class="text-center task-info" scope="row"><input type="text" class="designer-tasks" value="${activities.value}"></td>
+        <td class="text-center task-info" scope="row"><input type="text" class="activety designer-tasks" value="${activities.value}"></td>
         
         <td class="text-center task-value task-info">
         <input type="text" class='designer-tasks ' value='${designs.value}'> </td>
