@@ -1,6 +1,6 @@
 @media print {
     /* All your print styles go here */
-#h1,input:not(.designer-tasks), #adding-task, #result-text,#print {
+#h1,input:not(.designer-tasks), #adding-task, #result-text,#print, .delete-task {
       display: none !important;
     }
   }
