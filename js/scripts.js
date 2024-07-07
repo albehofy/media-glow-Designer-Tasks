@@ -4,15 +4,21 @@ const designs = document.getElementById("designs");
 const price = document.getElementById("price");
 let table = document.getElementById("results");
 let results = ``;
+if(localStorage.getItem('MediaglowDesignerTasksResult')){
+    results = localStorage.getItem('MediaglowDesignerTasksResult');
+    table.innerHTML = results; 
+}else{
+    localStorage.setItem('MediaglowDesignerTasksResult',results) 
+}
 coasts = ''
 let totalCoast = 0;
 const designerName = document.getElementById("designerName");
 const designerNameText = document.getElementById("designerNameText");
 
-
 addingTask.addEventListener("click", () => {
     AddingTasks();
     window.setTimeout(EditingData(), 0)
+    localStorage
 });
 
 designerName.addEventListener("blur", () => {
@@ -46,9 +52,10 @@ function AddingTasks() {
 
         <td class="text-center task-price task-info"> <input type="text" class='designer-tasks' value='${price.value}'></td>
         <td class="text-center total-coast">${Number(price.value) * Number(designs.value)}</td>
-        <td class="text-center  delete-task"><button class="btn btn-danger" onclick="removeTask(this)">delete</button></td>
+        <td class="text-center  delete-task"><button class="btn btn-danger" onclick="removeTask(this)">حذف</button></td>
         </tr>
         `
+        localStorage.setItem('MediaglowDesignerTasksResult',results)
     } else {
         alert("ادخل البيانات بطريقة صحيحة")
     }
@@ -79,6 +86,7 @@ function EditingData() {
                 CalculatingCoast();
             }, 0);
             results = table.innerHTML;
+            localStorage.setItem('MediaglowDesignerTasksResult',results)
         })
     })
 }
@@ -89,6 +97,7 @@ function removeTask(item) {
     let table = document.getElementById('results');
     row.remove();
     results = table.innerHTML;
+    localStorage.setItem('MediaglowDesignerTasksResult',results)
     CalculatingCoast();
     if(!totalCoast) {
         allTotal.innerText = 0;
